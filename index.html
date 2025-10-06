@@ -12,6 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -30,6 +33,10 @@
         <div class="header-wrapper">
             <header>
                 <div class="header header_inner_grid">
+                    <!-- responsive ke liye -->
+                    <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
                     <!-- Header Logo -->
                     <h1 class="header_heading">
                         <div class="header__heading-logo">
@@ -45,7 +52,7 @@
                         </div>
                     </h1>
                     <!-- Navigations -->
-                    <nav class="header__menu">
+                    <nav class="header__menu" id="mobileNav">
                         <ul class="header_menu_list list-menu list-menu--inline">
                             <li class="list_items"><a href="#" class="header__menu_item"><span>Home</span></a>
                             </li>
@@ -71,7 +78,7 @@
                                             <a href="#">Shop All</a>
                                         </div>
                                         <div class="hover_effect">
-                                            <h3><a href="#">Accessories</a></h3>
+                                            <h3><a href="     #">Accessories</a></h3>
                                             <a href="#">Carabiner</a>
                                             <a href="#">Adventure Clip</a>
                                             <a href="#"> Mini Adventure</a>
@@ -194,14 +201,15 @@
     <!-- Search Section -->
     <section>
         <!-- Search Overlay -->
-        <div id="searchOverlay" class="hidden">
+        <div id="searchOverlay" class="hidden search-overlay">
+            <!-- Background layer -->
+            <div class="searchOverlay__bg"></div>
+            <!-- White content box layer -->
             <div class="search-overlay__content">
-                <input type="text" placeholder="Search" autofocus>
+                <input type="search" placeholder="Search" autofocus>
                 <button class="close-search" onclick="closeSearchOverlay()">&times;</button>
             </div>
         </div>
-
-
     </section>
     <!-- Add to card -->
     <section>
@@ -247,6 +255,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section>
+        <div class="responsive-menu hidden" id="slide_bar">
+
         </div>
     </section>
     <script src="js/script.js"></script>

@@ -1,23 +1,25 @@
+// search
 const searchIcon = document.querySelector('.header__icon--search a');
 const searchOverlay = document.getElementById('searchOverlay');
-
-// searchIcon.addEventListener('click', function (event) {
-//     event.preventDefault();
-function show_search_bar(){
-    searchOverlay.classList.remove('hidden')
-    searchOverlay.classList.add("search-overlay")
-}
-
-
-function closeSearchOverlay(){
-    searchOverlay.classList.add('hidden');
-    searchOverlay.classList.remove("search-overlay")
-}
-
-
 // Add to cart
 const cartDrawer = document.getElementById("cartDrawer");
 const cartIcon = document.getElementById("addTocard");
+// bars
+let menu = document.getElementById("mobileNav");
+let slide_bar = document.getElementById("slide_bar")
+
+function show_search_bar() {
+    searchOverlay.classList.remove('hidden')
+    searchOverlay.classList.add("search-overlay")
+    document.body.style.overflow = 'hidden';
+
+}
+function closeSearchOverlay() {
+    searchOverlay.classList.add('hidden');
+    searchOverlay.classList.remove("search-overlay");
+    document.body.style.overflow = 'auto';
+}
+
 
 cartIcon.addEventListener("click", function () {
     cartDrawer.classList.add("open");
@@ -35,4 +37,16 @@ document.addEventListener("keydown", function (e) {
         closeSearchOverlay();
     }
 });
+
+//toggle menu
+  function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            const drawerPosition = drawer.style.left;
+
+            if (drawerPosition === '0px') {
+                drawer.style.left = '-250px';
+            } else {
+                drawer.style.left = '0';
+            }
+        }
 
